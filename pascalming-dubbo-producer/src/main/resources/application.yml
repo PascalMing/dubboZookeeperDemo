@@ -1,0 +1,22 @@
+server:
+  # 服务器的HTTP端口，默认为80
+  port: 18851
+  servlet:
+    # 应用的访问路径
+    context-path: /
+
+logging:
+  level:
+    com.pascalming: info
+    org.springframework: warn
+
+# Spring配置
+spring:
+  application:
+    name: pascalming-demo-provider
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  profiles:
+    active: dubbo
+

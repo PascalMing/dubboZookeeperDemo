@@ -1,0 +1,21 @@
+zookeeper.server.host: 127.0.0.1
+zookeeper.server.port: 2181
+
+dubbo:
+  application:
+    name: ${spring.application.name}
+
+  #注册中心地址
+  registry:
+    address: zookeeper://${zookeeper.server.host}:${zookeeper.server.port}  #?registry-type=service
+    file: ${user.home}/dubbo-cache/${spring.application.name}/dubbo.cache
+
+    # Dubbo Protocol
+  protocol:
+    name: dubbo
+    #host: 127.0.0.1
+    port: 20880
+
+  #扫描的包，**必须配置正确
+  scan:
+    basePackages: com.pascalming.dubbodemo.service
