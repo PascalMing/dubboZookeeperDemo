@@ -13,12 +13,16 @@ public class TestDubboService {
     @DubboReference(version = "${demo.service.version}")
     private IDubboServiceDemoInfo dubboServiceDemoInfo;
 
+    @DubboReference(version = "${demo.service.version}")
+    private IDubboServiceDemoMysql dubboServiceDemoMysql;
+
     @Scheduled(fixedRate = 1000)
     public void doTask()
     {
-        if ( dubboServiceDemoInfo != null ) {
+        if ( dubboServiceDemoInfo != null && dubboServiceDemoMysql !=null ) {
             DubboDemoInfoApi api = dubboServiceDemoInfo.info();
-            System.out.println("info:"+api.info+" ts: "+api.ts+" count: "+api.count);
+
+            System.out.println("info:"+api.info+" ts: "+api.ts+" count: "+api.count+",mysql:"+dubboServiceDemoMysql.dbInfo().size());
         }
         else {
             System.out.print(".");

@@ -18,6 +18,9 @@
         <thymeleaf.extras.shiro.version>2.0.0</thymeleaf.extras.shiro.version>
         <spring.boot.version>2.4.2</spring.boot.version>
         <spring.boot.admin.version>2.4.1</spring.boot.admin.version>
+        <druid.version>1.2.6</druid.version>
+        <mybatis-spring-boot-starter.version>2.2.0</mybatis-spring-boot-starter.version>
+        <mysql.version>8.0.24</mysql.version>
         <!-- dubbo版本号 -->
         <dubbo.version>2.7.12</dubbo.version>
     </properties>
@@ -38,7 +41,7 @@
 
     <modules>
         <module>pascalming-dubbo-api</module>
-        <module>pascalming-dubbo-producer</module>
+        <module>pascalming-dubbo-provider</module>
         <module>pascalming-dubbo-consumer</module>
     </modules>
     <packaging>pom</packaging>

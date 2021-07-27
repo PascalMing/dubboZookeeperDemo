@@ -4,7 +4,7 @@ demo:
 
 embedded:
   zookeeper:
-    port: 2181
+    port: 12181
 
 dubbo:
   registry:
